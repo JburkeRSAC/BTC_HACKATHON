@@ -26,7 +26,7 @@ $date_array = json_decode($date_str, TRUE);
 $daily_block_count = count($date_array['blocks']);
 #echo $daily_block_count."\n";
 for($i=0;$i<$daily_block_count;$i++){
-	echo $i."\n";
+	#echo $i."\n";
 	//print each block data for that day...
 	//Array
 	//(
