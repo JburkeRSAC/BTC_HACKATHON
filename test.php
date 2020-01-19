@@ -21,6 +21,21 @@ $options = array("Info"=>"getInfo", "BlockCount"=>"getBlockCount", "Difficulty"=
 	#echo "\n\n";
 #}
 #echo $date_url."\n";
-$date_array = file_get_contents($date_url);
-print_r($date_array);
+$date_str = file_get_contents($date_url);
+$date_array = json_decode($date_str, TRUE);
+$daily_block_count = count($date_array['blocks']);
+#echo $daily_block_count."\n";
+for($i=0;$i<$daily_block_count;$i++){
+	echo $i."\n";
+	//print each block data for that day...
+	//Array
+	//(
+	//	[height] => 598364
+	//	[hash] => 00000000000000000012c09508a7243c383e72400baebbe07ac8256147ac7632
+	//	[time] => 1570492282
+	//	[main_chain] => 1
+	//)
+	//
+	print_r($date_array['blocks'][$i]);
+}
 ?>
